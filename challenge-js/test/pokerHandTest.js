@@ -1,6 +1,14 @@
 var assert = require('assert');
 var PokerHand = require('../pokerHand.js');
 
+describe('Initiates a deck of cards', function() {
+  const hand = new PokerHand('As Ks Qs Js 10s');
+
+  it('Return 52 cards', function() {
+    assert.equal(hand.initDeck().length, 52);
+  });
+});
+
 /**
  * test
  */
