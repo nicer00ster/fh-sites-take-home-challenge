@@ -9,6 +9,22 @@ describe('Initiates a deck of cards', function() {
   });
 });
 
+describe('Checks if hand dealt is 5 cards', function() {
+  const hand = new PokerHand('As Ks Qs Js 10s');
+
+  it('Returns a hand with the length of 5', function() {
+    assert.equal(hand.handleValidity('As Ks Qs Js 10s').length, 5);
+  });
+});
+
+describe('Checks if the hand has duplicate cards', function() {
+  const hand = new PokerHand('As 4s Qs Js 10s');
+
+  it('Doesn\'t return an error when the hand is dealt.', function() {
+    assert.equal(hand.handleDuplicates('As 4s Qs Js 10s'), 'As 4s Qs Js 10s');
+  });
+});
+
 /**
  * test
  */
