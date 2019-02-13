@@ -25,47 +25,74 @@ describe('Checks if the hand has duplicate cards', function() {
   });
 });
 
-/**
- * test
- */
 describe('Rank a Royal Flush', function() {
+  const hand = new PokerHand('As Ks Qs Js 10s');
+
   it('Return royal flush when hand given', function() {
-    var hand = new PokerHand('As Ks Qs Js 10s');
     assert.equal(hand.getRank(), 'Royal Flush');
   });
 });
 
-/**
- * test
- */
-describe('Rank a Pair', function() {
-  it('Return one pair when hand given', function() {
-    var hand = new PokerHand('Ah As 10c 7d 6s');
+describe('Rank A Straight', function() {
+  const hand = new PokerHand('9c 8d 7s 6d 5h');
 
-    assert.equal(hand.getRank(), 'One Pair');
+  it('Return straight when hand given', function() {
+    assert.equal(hand.getRank(), 'Straight');
   });
 });
 
-/**
- * test
- */
-describe('Rank Two Pair', function() {
-  it('Return two pair when hand given', function() {
-    var hand = new PokerHand('Kh Kc 3s 3h 2d');
+describe('Rank A Straight Flush', function() {
+  const hand = new PokerHand('8c 7c 6c 5c 4c');
 
-    assert.equal(hand.getRank(), 'Two Pair');
+  it('Return straight flush when hand given', function() {
+    assert.equal(hand.getRank(), 'Straight Flush');
   });
 });
 
-/**
- * test
- */
 describe('Rank A Flush', function() {
-  var hand = new PokerHand('Kh Qh 6h 2h 9h');
+  const hand = new PokerHand('4s Js 8s 2s 9s');
 
   it('Return flush when hand given', function() {
     assert.equal(hand.getRank(), 'Flush');
   });
 });
 
-// More tests go here
+describe('Rank A Flush', function() {
+  const hand = new PokerHand('4s Js 8s 2s 9s');
+
+  it('Return flush when hand given', function() {
+    assert.equal(hand.getRank(), 'Flush');
+  });
+});
+
+describe('Rank A Four of a Kind', function() {
+  const hand = new PokerHand('5h 5d 5s 5c 2d');
+
+  it('Return Four of a Kind when hand given', function() {
+    assert.equal(hand.getRank(), 'Four of a Kind');
+  });
+});
+
+describe('Rank A Three of a Kind', function() {
+  const hand = new PokerHand('3c 3d 3s Jh Qs');
+
+  it('Returns Three of a Kind when hand given', function() {
+    assert.equal(hand.getRank(), 'Three of a Kind');
+  });
+});
+
+describe('Rank a Pair', function() {
+  const hand = new PokerHand('Ah As 10c 7d 6s');
+
+  it('Return one pair when hand given', function() {
+    assert.equal(hand.getRank(), 'One Pair');
+  });
+});
+
+describe('Rank Two Pair', function() {
+  const hand = new PokerHand('Kh Kc 3s 3h 2d');
+
+  it('Return two pair when hand given', function() {
+    assert.equal(hand.getRank(), 'Two Pair');
+  });
+});
