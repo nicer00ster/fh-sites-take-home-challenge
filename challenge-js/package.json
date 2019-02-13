@@ -4,7 +4,7 @@
   "description": "Coding Challenge for FareHarbor Sites JS Interview",
   "main": "src/pokerHand.js",
   "directories": {
-    "test": "test"
+    "test": "yarn test -R spec"
   },
   "dependencies": {},
   "devDependencies": {
